@@ -1,0 +1,95 @@
+#!/usr/bin/python
+
+from urllib import urlopen
+from HTMLParser import HTMLParser
+import json
+
+DOWNLOADS = 'url'
+KEYMAP = {
+    'npm': 'npm',
+    'NODE_MODULE_VERSION': 'node-module-version',
+    'V8': 'v8',
+    'Version': 'version',
+    'Date': 'date',
+    'LTS': 'lts',
+    DOWNLOADS: 'url'
+}
+
+
+result_list = []
+
+def generate_download_links(obj, prefix):
+    (name, version) = obj[KEYMAP['Version']].split(' ')
+    if name == 'io.js':
+        return None
+    obj[DOWNLOADS] = {
+        'darwin': '%snode-v%s-darwin-x64.tar.xz' % (prefix, version),
+        'win': '%snode-v%s-win-x64.7z' % (prefix, version),
+        'linux': '%snode-v%s-linux-x64.tar.xz' % (prefix, version)
+    }
+    return obj
+
+class NodeVersionsParser(HTMLParser):
+    in_table = False
+    in_list = False
+    tmp_obj = None
+    tmp_key = None
+
+    def handle_starttag(self, tag, attrs):
+        # Go into the <table class="download-table">
+        if tag == 'table':
+            for key, value in attrs:
+                if key == 'class':
+                    self.in_table = value.startswith('download-table')
+                    break
+
+        # Go into the <tbody>, the list of all node versions
+        if self.in_table and tag == 'tbody':
+            self.in_list = True
+
+        if self.in_list:
+            # Start a new item
+            if tag == 'tr':
+                self.tmp_obj = {}
+            if tag == 'td':
+                key = attrs[0][1]
+                # Download link
+                if key == 'download-table-last':
+                    self.tmp_key = DOWNLOADS
+                else:
+                    self.tmp_key = key
+
+            # Generate download links
+            if tag == 'a' and self.tmp_key == DOWNLOADS:
+                self.tmp_obj = generate_download_links(self.tmp_obj, attrs[0][1])
+                self.tmp_key = None
+
+
+    def handle_endtag(self, tag):
+        global result_list
+
+        if tag == 'table':
+            self.in_table = False
+
+        if tag == 'tbody':
+            self.in_list = False
+
+        if self.in_list:
+            # End of an item, append to the list
+            if tag == 'tr':
+                if self.tmp_obj is not None:
+                    result_list.append(self.tmp_obj)
+                self.tmp_obj = None
+            if tag == 'td':
+                self.tmp_key = None
+
+    def handle_data(self, data):
+        if self.tmp_obj is not None and self.tmp_key:
+            self.tmp_obj[KEYMAP[self.tmp_key]] = data.strip()
+
+parser = NodeVersionsParser()
+res = urlopen('https://nodejs.org/en/download/releases/')
+parser.feed(res.read())
+file = open('versions.json', 'w')
+file.write(json.dumps(result_list, indent=4))
+file.close()
