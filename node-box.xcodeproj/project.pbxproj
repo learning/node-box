@@ -12,7 +12,24 @@
 		B06D8EDC212E88F500B65EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06D8EDB212E88F500B65EEE /* Assets.xcassets */; };
 		B06D8EDF212E88F500B65EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06D8EDD212E88F500B65EEE /* Main.storyboard */; };
 		B06D8EE8212EB5FB00B65EEE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D8EE7212EB5FB00B65EEE /* WindowController.swift */; };
+		B06D8EEA212FB87A00B65EEE /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D8EE9212FB87A00B65EEE /* VersionManager.swift */; };
+		B088F07421300F5A00F41F20 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B088F07321300F5A00F41F20 /* Alamofire.framework */; };
+		B088F07521300F5A00F41F20 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B088F07321300F5A00F41F20 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B088F07621300F5A00F41F20 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B088F07521300F5A00F41F20 /* Alamofire.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B06D8ED4212E88F300B65EEE /* node-box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "node-box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -23,6 +40,9 @@
 		B06D8EE0212E88F500B65EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06D8EE1212E88F500B65EEE /* node_box.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = node_box.entitlements; sourceTree = "<group>"; };
 		B06D8EE7212EB5FB00B65EEE /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
+		B06D8EE9212FB87A00B65EEE /* VersionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionManager.swift; sourceTree = "<group>"; };
+		B088F07321300F5A00F41F20 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
+		B0F667CA213010CD008836D6 /* node-box.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "node-box.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B088F07421300F5A00F41F20 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -39,6 +60,8 @@
 		B06D8ECB212E88F300B65EEE = {
 			isa = PBXGroup;
 			children = (
+				B0F667CA213010CD008836D6 /* node-box.entitlements */,
+				B088F07321300F5A00F41F20 /* Alamofire.framework */,
 				B06D8ED6212E88F400B65EEE /* mac */,
 				B06D8ED5212E88F300B65EEE /* Products */,
 			);
@@ -58,6 +81,7 @@
 				B06D8ED7212E88F400B65EEE /* AppDelegate.swift */,
 				B06D8EE7212EB5FB00B65EEE /* WindowController.swift */,
 				B06D8ED9212E88F400B65EEE /* TabViewController.swift */,
+				B06D8EE9212FB87A00B65EEE /* VersionManager.swift */,
 				B06D8EDB212E88F500B65EEE /* Assets.xcassets */,
 				B06D8EDD212E88F500B65EEE /* Main.storyboard */,
 				B06D8EE0212E88F500B65EEE /* Info.plist */,
@@ -76,6 +100,7 @@
 				B06D8ED0212E88F300B65EEE /* Sources */,
 				B06D8ED1212E88F300B65EEE /* Frameworks */,
 				B06D8ED2212E88F300B65EEE /* Resources */,
+				B088F07621300F5A00F41F20 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -98,6 +123,11 @@
 				TargetAttributes = {
 					B06D8ED3212E88F300B65EEE = {
 						CreatedOnToolsVersion = 9.4.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -136,6 +166,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B06D8EEA212FB87A00B65EEE /* VersionManager.swift in Sources */,
 				B06D8EDA212E88F400B65EEE /* TabViewController.swift in Sources */,
 				B06D8EE8212EB5FB00B65EEE /* WindowController.swift in Sources */,
 				B06D8ED8212E88F400B65EEE /* AppDelegate.swift in Sources */,
@@ -273,10 +304,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = mac/node_box.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V4E6WEDBWR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -293,10 +327,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = mac/node_box.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = V4E6WEDBWR;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
+				);
 				INFOPLIST_FILE = mac/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

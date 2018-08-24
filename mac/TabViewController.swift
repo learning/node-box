@@ -8,10 +8,7 @@
 
 import Cocoa
 
-class TabViewController: NSViewController {
-
-    @IBOutlet weak var versionView: NSView!
-    @IBOutlet weak var downloadView: NSView!
+class TabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +23,7 @@ class TabViewController: NSViewController {
     }
 
     @objc func changeTab(notification: NSNotification) {
-        switch (notification.object as! Int) {
-            case 0:
-                versionView.isHidden = false
-                downloadView.isHidden = true
-                break
-            case 1:
-                versionView.isHidden = true
-                downloadView.isHidden = false
-                break
-            default:
-                NSLog("Not supported action")
-                break
-        }
+        self.tabView.selectTabViewItem(at: notification.object as! Int)
     }
 
 }
