@@ -29,10 +29,16 @@ class VersionManager {
     }
     
     static private func writeFile(name: String, content: String) -> Bool {
-        print("directory    \(directory)")
-        // TODO: Is directory exists?
+        // If directory not exists, create it
+        if !FileManager.default.fileExists(atPath: (directory?.path)!) {
+            do {
+                try FileManager.default.createDirectory(at: directory!, withIntermediateDirectories: false, attributes: nil)
+            } catch {
+                print("Create directory \(directory!.path) failed")
+                return false
+            }
+        }
         let file: URL? = directory?.appendingPathComponent(name)
-        print("URL         \(file)")
         if file != nil {
             do {
                 try content.write(to: file!, atomically: false, encoding: String.Encoding.utf8)
@@ -71,11 +77,11 @@ class VersionManager {
             }
             
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
-//                print("Data: \(utf8Text)") // original server data as UTF8 string
+                // Write json to file
                 if writeFile(name: "versions.json", content: utf8Text) {
-                    print("wrote to \(directory) successed")
+                    print("wrote to \(directory!.path) successed")
                 } else {
-                    print("wrote to \(directory) failed")
+                    print("wrote to \(directory!.path) failed")
                 }
             }
         }

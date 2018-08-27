@@ -18,6 +18,9 @@ class WindowController: NSWindowController {
         NotificationCenter.default.addObserver(self, selector: #selector(self.reopen(notification:)), name: Notification.Name("reopen"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.setLoading(notification:)), name: Notification.Name("show-loading"), object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.setLoading(notification:)), name: Notification.Name("hide-loading"), object: nil)
+        var frame = self.window?.frame
+        frame?.size = NSSize(width: 480, height: 270)
+        self.window?.setFrame(frame!, display: true)
         let downloadList: Array<Dictionary<String, Any>>? = VersionManager.getDownloadList()
     }
 
