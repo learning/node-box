@@ -22,7 +22,10 @@ def generate_download_links(obj, prefix):
     (name, version) = obj[KEYMAP['Version']].split(' ')
     if name == 'io.js':
         return None
+
+    obj[KEYMAP['Version']] = version
     obj[DOWNLOADS] = {
+        'shasum256': '%sSHASUMS256.txt' % prefix,
         'darwin': '%snode-v%s-darwin-x64.tar.xz' % (prefix, version),
         'win': '%snode-v%s-win-x64.7z' % (prefix, version),
         'linux': '%snode-v%s-linux-x64.tar.xz' % (prefix, version)

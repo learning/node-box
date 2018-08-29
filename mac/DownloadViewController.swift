@@ -8,31 +8,58 @@
 
 import Cocoa
 
+let rootElement: String = "VERSION SERIES"
 let items: [String] = ["All", "Node.js 10.x", "Node.js 9.x", "Node.js 8.x", "Node.js 6.x", "Node.js 4.x", "Node.js 0.12.x", "Node.js 0.10.x"]
 
 class DownloadViewController: NSSplitViewController, NSOutlineViewDelegate, NSOutlineViewDataSource {
-
-    @IBOutlet weak var sidebarView: NSOutlineView!
     
+    @IBOutlet weak var sidebarView: NSOutlineView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do view setup here.
-        NSLog("Download View Did Load")
+        sidebarView.expandItem(rootElement)
+        sidebarView.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
+        VersionManager.updateDownloadList()
     }
     
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         if item == nil {
-            return items.count
+            return 1
         }
-        return 0
+        return items.count
     }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
+        return item as! String == rootElement
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, isGroupItem item: Any) -> Bool {
+        return item as! String == rootElement
+    }
+
+    func outlineView(_ outlineView: NSOutlineView, shouldExpandItem item: Any) -> Bool {
+        return item as! String == rootElement
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, shouldCollapseItem item: Any) -> Bool {
+        return item as! String != rootElement
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, shouldSelectItem item: Any) -> Bool {
+        return item as! String != rootElement
+    }
+    
+    func outlineView(_ outlineView: NSOutlineView, shouldShowOutlineCellForItem item: Any) -> Bool {
         return false
     }
     
     func outlineView(_ outlineView: NSOutlineView, child index: Int, ofItem item: Any?) -> Any {
-        return items[index]
+        if item == nil {
+            // root element
+            return rootElement
+        } else {
+            return items[index]
+        }
     }
     
     func outlineView(_ outlineView: NSOutlineView, viewFor tableColumn: NSTableColumn?, item: Any) -> NSView? {
@@ -42,6 +69,7 @@ class DownloadViewController: NSSplitViewController, NSOutlineViewDelegate, NSOu
             textField.stringValue = item as! String
         }
         view.imageView?.image = nil
+        
 //        if let image = account.icon {
 //            view.imageView!.image = image
 //        }

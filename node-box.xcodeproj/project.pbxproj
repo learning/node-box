@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B052CED8213688CA004B5E87 /* VersionListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052CED7213688CA004B5E87 /* VersionListViewController.swift */; };
+		B052CEDA2136987E004B5E87 /* VersionListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B052CED92136987E004B5E87 /* VersionListView.swift */; };
 		B066C06A2133CFBD005F126B /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B066C0692133CFBD005F126B /* Alamofire.framework */; };
 		B066C06B2133CFBD005F126B /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B066C0692133CFBD005F126B /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B066C06D2133D1FC005F126B /* DownloadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B066C06C2133D1FC005F126B /* DownloadViewController.swift */; };
@@ -33,6 +35,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		B052CED7213688CA004B5E87 /* VersionListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionListViewController.swift; sourceTree = "<group>"; };
+		B052CED92136987E004B5E87 /* VersionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionListView.swift; sourceTree = "<group>"; };
 		B066C0692133CFBD005F126B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		B066C06C2133D1FC005F126B /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
 		B06D8ED4212E88F300B65EEE /* node-box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "node-box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -90,6 +94,8 @@
 				B06D8EE7212EB5FB00B65EEE /* WindowController.swift */,
 				B06D8ED9212E88F400B65EEE /* TabViewController.swift */,
 				B066C06C2133D1FC005F126B /* DownloadViewController.swift */,
+				B052CED7213688CA004B5E87 /* VersionListViewController.swift */,
+				B052CED92136987E004B5E87 /* VersionListView.swift */,
 				B06D8EE9212FB87A00B65EEE /* VersionManager.swift */,
 				B06D8EDB212E88F500B65EEE /* Assets.xcassets */,
 				B06D8EDD212E88F500B65EEE /* Main.storyboard */,
@@ -179,7 +185,9 @@
 				B06D8EDA212E88F400B65EEE /* TabViewController.swift in Sources */,
 				B06D8EE8212EB5FB00B65EEE /* WindowController.swift in Sources */,
 				B066C06D2133D1FC005F126B /* DownloadViewController.swift in Sources */,
+				B052CEDA2136987E004B5E87 /* VersionListView.swift in Sources */,
 				B06D8ED8212E88F400B65EEE /* AppDelegate.swift in Sources */,
+				B052CED8213688CA004B5E87 /* VersionListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

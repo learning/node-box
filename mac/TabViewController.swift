@@ -12,8 +12,8 @@ class TabViewController: NSTabViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.transitionOptions = NSViewController.TransitionOptions(rawValue: 0)
         NotificationCenter.default.addObserver(self, selector: #selector(self.changeTab(notification:)), name: Notification.Name("change-tab"), object: nil)
-        // Do any additional setup after loading the view.
     }
 
     override var representedObject: Any? {

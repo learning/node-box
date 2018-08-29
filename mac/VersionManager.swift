@@ -68,10 +68,6 @@ class VersionManager {
     
     static func updateDownloadList () {
         Alamofire.request(VERSION_URL).responseJSON { response in
-//            print("Request: \(String(describing: response.request))")   // original url request
-//            print("Response: \(String(describing: response.response))") // http url response
-//            print("Result: \(response.result)")                         // response serialization result
-            
             if let json = response.result.value {
 //                print("JSON: \(json)") // serialized json response
             }
@@ -79,9 +75,9 @@ class VersionManager {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 // Write json to file
                 if writeFile(name: "versions.json", content: utf8Text) {
-                    print("wrote to \(directory!.path) successed")
+//                    print("wrote to \(directory!.path) success")
                 } else {
-                    print("wrote to \(directory!.path) failed")
+                    NotificationCenter.default.post(name: Notification.Name("alert"), object: "wrote to \(directory!.path) failed")
                 }
             }
         }
