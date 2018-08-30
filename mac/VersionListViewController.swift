@@ -10,6 +10,8 @@ import Cocoa
 
 class VersionListViewController: NSViewController {
 
+    @IBOutlet weak var emptyBox: NSBox!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do view setup here.
