@@ -14,6 +14,12 @@ let VERSION_URL = "https://raw.githubusercontent.com/learning/node-box/master/ve
 class VersionManager {
     static private var directory: URL? = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle.main.bundleIdentifier!, isDirectory: true)
 
+    /**
+     * Get a local file from file system
+     *
+     * - parameters:
+     *   - name: The file's name
+     */
     static private func getFile(name: String) -> URL? {
         if let pathComponent = directory?.appendingPathComponent(name) {
             let filePath = pathComponent.path
@@ -28,6 +34,13 @@ class VersionManager {
         }
     }
     
+    /**
+     * Write plain text to a local file
+     *
+     * - parameters:
+     *   - name: The file's name
+     *   - content: Plain text to be written
+     */
     static private func writeFile(name: String, content: String) -> Bool {
         // If directory not exists, create it
         if !FileManager.default.fileExists(atPath: (directory?.path)!) {
@@ -50,6 +63,9 @@ class VersionManager {
         return false
     }
 
+    /**
+     * Get downloadable version list from *version.json*
+     */
     static func getDownloadList () -> Array<Dictionary<String, Any>>? {
         let file: URL? = getFile(name: "versions.json")
         if file != nil {
@@ -66,16 +82,13 @@ class VersionManager {
         }
     }
     
-    static func updateDownloadList () {
+    static func updateDownloadList (onSuccess success: @escaping () -> Void) {
         Alamofire.request(VERSION_URL).responseJSON { response in
-            if let json = response.result.value {
-//                print("JSON: \(json)") // serialized json response
-            }
-            
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 // Write json to file
                 if writeFile(name: "versions.json", content: utf8Text) {
-//                    print("wrote to \(directory!.path) success")
+                    print("Wrote to \(directory!.path) success!")
+                    success()
                 } else {
                     NotificationCenter.default.post(name: Notification.Name("alert"), object: "wrote to \(directory!.path) failed")
                 }
