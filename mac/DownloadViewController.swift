@@ -25,27 +25,31 @@ class DownloadViewController: NSSplitViewController,
         static let DateCell = "DATE_CELL"
     }
     
-    var fullList: Array<Dictionary<String, Any>>?;
+    var versions: Array<Dictionary<String, Any>>?;
+    var branches: Array<Dictionary<String, Any>>?;
+    var currentList: Array<Dictionary<String, Any>>?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         sidebarView.expandItem(rootElement)
         sidebarView.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
-        self.initList()
+        self.initData()
     }
     
     /**
      * Prepare the downloadable version list for the app
      */
-    func initList() {
-        fullList = VersionManager.getDownloadList()
-        if fullList != nil {
+    func initData() {
+        let data = VersionManager.getData()
+        if data != nil {
             print("already exists")
+            versions = data!["versions"]
+            branches = data!["branches"]
             tableView.reloadData()
         } else {
             print("not exists, downloading...")
             VersionManager.updateDownloadList {
-                self.initList()
+                self.initData()
             }
         }
     }
@@ -108,7 +112,7 @@ class DownloadViewController: NSSplitViewController,
     
     /* ---------- Table ---------- */
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return fullList?.count ?? 0
+        return versions?.count ?? 0
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -116,7 +120,7 @@ class DownloadViewController: NSSplitViewController,
         var identifier: String = "";
 
         // Get an item from list
-        guard let item:Dictionary<String, Any> = fullList?[row] else {
+        guard let item:Dictionary<String, Any> = versions?[row] else {
             return nil
         }
         

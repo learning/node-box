@@ -64,15 +64,17 @@ class VersionManager {
     }
 
     /**
-     * Get downloadable version list from *version.json*
+     * Get data from *data.json*
+     * - **data["branches"]**: All available version branches
+     * - **data["versions"]**: All downloadable version list
      */
-    static func getDownloadList () -> Array<Dictionary<String, Any>>? {
+    static func getData () -> Dictionary<String, Array<Dictionary<String, Any>>>? {
         let file: URL? = getFile(name: "versions.json")
         if file != nil {
             do {
-                let downloads: Array<Dictionary<String, Any>> =
-                    try JSONSerialization.jsonObject(with: Data(contentsOf: file!), options: []) as! Array<Dictionary<String, Any>>
-                return downloads
+                let data: Dictionary<String, Array<Dictionary<String, Any>>> =
+                    try JSONSerialization.jsonObject(with: Data(contentsOf: file!), options: []) as! Dictionary<String, Array<Dictionary<String, Any>>>
+                return data
             } catch {
                 return nil
             }
