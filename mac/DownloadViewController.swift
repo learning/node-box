@@ -45,6 +45,8 @@ class DownloadViewController: NSSplitViewController,
             print("already exists")
             versions = data!["versions"]
             branches = data!["branches"]
+            updateList()
+            sidebarView.reloadData()
             tableView.reloadData()
         } else {
             print("not exists, downloading...")
@@ -54,13 +56,21 @@ class DownloadViewController: NSSplitViewController,
         }
     }
     
+    /**
+     * Update downloadable version list when sidebar item cliked
+     */
+    func updateList() {
+        print(sidebarView.selectedRow)
+        currentList = versions
+    }
+    
     /* ---------- Sidebar ---------- */
 
     func outlineView(_ outlineView: NSOutlineView, numberOfChildrenOfItem item: Any?) -> Int {
         if item == nil {
             return 1
         }
-        return items.count
+        return branches?.count ?? 0
     }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
@@ -92,7 +102,7 @@ class DownloadViewController: NSSplitViewController,
             // root element
             return rootElement
         } else {
-            return items[index]
+            return (branches?[index] as! Dictionary<String, String>)["name"] ?? ""
         }
     }
     
@@ -103,16 +113,18 @@ class DownloadViewController: NSSplitViewController,
             textField.stringValue = item as! String
         }
         view.imageView?.image = nil
-        
-//        if let image = account.icon {
-//            view.imageView!.image = image
-//        }
+
         return view
+    }
+    
+    func outlineViewSelectionDidChange(_ notification: Notification) {
+        print("outlineViewSelectionDidChange ...")
+        updateList()
     }
     
     /* ---------- Table ---------- */
     func numberOfRows(in tableView: NSTableView) -> Int {
-        return versions?.count ?? 0
+        return currentList?.count ?? 0
     }
     
     func tableView(_ tableView: NSTableView, viewFor tableColumn: NSTableColumn?, row: Int) -> NSView? {
@@ -120,7 +132,7 @@ class DownloadViewController: NSSplitViewController,
         var identifier: String = "";
 
         // Get an item from list
-        guard let item:Dictionary<String, Any> = versions?[row] else {
+        guard let item:Dictionary<String, Any> = currentList?[row] else {
             return nil
         }
         

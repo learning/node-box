@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-let VERSION_URL = "https://raw.githubusercontent.com/learning/node-box/master/versions.json"
+let VERSION_URL = "https://raw.githubusercontent.com/learning/node-box/master/data.json"
 
 class VersionManager {
     static private var directory: URL? = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle.main.bundleIdentifier!, isDirectory: true)
@@ -69,7 +69,7 @@ class VersionManager {
      * - **data["versions"]**: All downloadable version list
      */
     static func getData () -> Dictionary<String, Array<Dictionary<String, Any>>>? {
-        let file: URL? = getFile(name: "versions.json")
+        let file: URL? = getFile(name: "data.json")
         if file != nil {
             do {
                 let data: Dictionary<String, Array<Dictionary<String, Any>>> =
@@ -88,7 +88,7 @@ class VersionManager {
         Alamofire.request(VERSION_URL).responseJSON { response in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 // Write json to file
-                if writeFile(name: "versions.json", content: utf8Text) {
+                if writeFile(name: "data.json", content: utf8Text) {
                     print("Wrote to \(directory!.path) success!")
                     success()
                 } else {

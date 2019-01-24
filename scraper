@@ -18,6 +18,10 @@ KEYMAP = {
 # All branches
 BRANCHES = [
     {
+        "name": "All",
+        "pattern": ""
+    },
+    {
         "name": "Node.js 11.x",
         "pattern": "11."
     },

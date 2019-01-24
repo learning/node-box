@@ -1,6 +1,10 @@
 {
     "branches": [
         {
+            "pattern": "",
+            "name": "All"
+        },
+        {
             "pattern": "11.",
             "name": "Node.js 11.x"
         },
