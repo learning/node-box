@@ -20,6 +20,7 @@
 		B06D8EEA212FB87A00B65EEE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D8EE9212FB87A00B65EEE /* Store.swift */; };
 		B0EAC05921F995E600E48C15 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAC05821F995E600E48C15 /* Branch.swift */; };
 		B0EAC05B21F9A11C00E48C15 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAC05A21F9A11C00E48C15 /* Version.swift */; };
+		B0EAC05F21F9C29900E48C15 /* TableHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAC05E21F9C29900E48C15 /* TableHeaderView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -51,6 +52,7 @@
 		B06D8EE9212FB87A00B65EEE /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
 		B0EAC05821F995E600E48C15 /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
 		B0EAC05A21F9A11C00E48C15 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
+		B0EAC05E21F9C29900E48C15 /* TableHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableHeaderView.swift; sourceTree = "<group>"; };
 		B0F19CEF2133ABC0005C7BD2 /* node-box.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "node-box.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -100,6 +102,7 @@
 				B066C06C2133D1FC005F126B /* DownloadViewController.swift */,
 				B052CED7213688CA004B5E87 /* VersionListViewController.swift */,
 				B052CED92136987E004B5E87 /* VersionListView.swift */,
+				B0EAC05E21F9C29900E48C15 /* TableHeaderView.swift */,
 				B06D8EE9212FB87A00B65EEE /* Store.swift */,
 				B0EAC05821F995E600E48C15 /* Branch.swift */,
 				B0EAC05A21F9A11C00E48C15 /* Version.swift */,
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B0EAC05F21F9C29900E48C15 /* TableHeaderView.swift in Sources */,
 				B06D8EEA212FB87A00B65EEE /* Store.swift in Sources */,
 				B0EAC05B21F9A11C00E48C15 /* Version.swift in Sources */,
 				B06D8EDA212E88F400B65EEE /* TabViewController.swift in Sources */,

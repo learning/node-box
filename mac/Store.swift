@@ -48,6 +48,10 @@ class Store {
             }
         }
     }
+    
+    public func refresh(onSuccess success: @escaping () -> Void) {
+        // TODO: refresh version list
+    }
 
     /**
      * Get a local file from file system

@@ -9,12 +9,16 @@
 import Foundation
 
 class Version {
-    var version:String;
-    var npmVersion:String;
-    var v8Version:String;
-    var nodeModuleVersion:String;
+    var version:String
+    var npmVersion:String
+    var v8Version:String
+    var nodeModuleVersion:String
     var url:String
-    var date:String;
+    var date:String
+    var isDownloaded:Bool
+    var isDownloading:Bool
+    var percentage:Float
+    var isActive:Bool
 
     init(data: Dictionary<String, Any>) {
         self.version = data["version"] as? String ?? ""
@@ -23,5 +27,9 @@ class Version {
         self.nodeModuleVersion = data["node-module-version"] as? String ?? ""
         self.url = (data["url"] as! Dictionary<String, String>)["darwin"] ?? ""
         self.date = data["date"] as? String ?? ""
+        self.isDownloaded = false
+        self.isDownloading = false
+        self.percentage = 0
+        self.isActive = false
     }
 }

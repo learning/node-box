@@ -132,6 +132,8 @@ class DownloadViewController: NSSplitViewController,
         } else if tableColumn == tableView.tableColumns[1] {
             text = item.date
             identifier = CellIdentifiers.DateCell
+        } else if tableColumn == tableView.tableColumns[2] {
+            
         }
 
         if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: identifier), owner: nil) as? NSTableCellView {
