@@ -9,7 +9,6 @@
 import Cocoa
 
 let rootElement: String = "VERSION SERIES"
-let items: [String] = ["All", "Node.js 10.x", "Node.js 9.x", "Node.js 8.x", "Node.js 6.x", "Node.js 4.x", "Node.js 0.12.x", "Node.js 0.10.x"]
 
 class DownloadViewController: NSSplitViewController,
                               NSOutlineViewDelegate,
@@ -25,34 +24,23 @@ class DownloadViewController: NSSplitViewController,
         static let DateCell = "DATE_CELL"
     }
     
-    var versions: Array<Dictionary<String, Any>>?;
-    var branches: Array<Dictionary<String, Any>>?;
-    var currentList: Array<Dictionary<String, Any>>?;
+    var store: Store?;
+    var currentList: Array<Version>?;
 
     override func viewDidLoad() {
         super.viewDidLoad()
         sidebarView.expandItem(rootElement)
-        sidebarView.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
-        self.initData()
+        self.initStore()
     }
     
     /**
      * Prepare the downloadable version list for the app
      */
-    func initData() {
-        let data = VersionManager.getData()
-        if data != nil {
-            print("already exists")
-            versions = data!["versions"]
-            branches = data!["branches"]
-            updateList()
-            sidebarView.reloadData()
-            tableView.reloadData()
-        } else {
-            print("not exists, downloading...")
-            VersionManager.updateDownloadList {
-                self.initData()
-            }
+    func initStore() {
+        Store.getStore { (s) -> Void in
+            self.store = s
+            self.sidebarView.reloadData()
+            self.sidebarView.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
         }
     }
     
@@ -60,8 +48,10 @@ class DownloadViewController: NSSplitViewController,
      * Update downloadable version list when sidebar item cliked
      */
     func updateList() {
-        print(sidebarView.selectedRow)
-        currentList = versions
+        let branch = self.store?.branches[sidebarView.selectedRow - 1]
+        let pattern:String = branch?.pattern ?? ""
+        currentList = self.store?.versions.filter { $0.version.starts(with: pattern) }
+        tableView.reloadData()
     }
     
     /* ---------- Sidebar ---------- */
@@ -70,7 +60,7 @@ class DownloadViewController: NSSplitViewController,
         if item == nil {
             return 1
         }
-        return branches?.count ?? 0
+        return self.store?.branches.count ?? 0
     }
     
     func outlineView(_ outlineView: NSOutlineView, isItemExpandable item: Any) -> Bool {
@@ -102,7 +92,7 @@ class DownloadViewController: NSSplitViewController,
             // root element
             return rootElement
         } else {
-            return (branches?[index] as! Dictionary<String, String>)["name"] ?? ""
+            return self.store?.branches[index].name ?? ""
         }
     }
     
@@ -118,7 +108,6 @@ class DownloadViewController: NSSplitViewController,
     }
     
     func outlineViewSelectionDidChange(_ notification: Notification) {
-        print("outlineViewSelectionDidChange ...")
         updateList()
     }
     
@@ -132,16 +121,16 @@ class DownloadViewController: NSSplitViewController,
         var identifier: String = "";
 
         // Get an item from list
-        guard let item:Dictionary<String, Any> = currentList?[row] else {
+        guard let item:Version = currentList?[row] else {
             return nil
         }
         
 
         if tableColumn == tableView.tableColumns[0] {
-            text = item["version"] as! String
+            text = item.version
             identifier = CellIdentifiers.VersionCell
         } else if tableColumn == tableView.tableColumns[1] {
-            text = item["date"] as! String
+            text = item.date
             identifier = CellIdentifiers.DateCell
         }
 

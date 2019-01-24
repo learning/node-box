@@ -11,8 +11,43 @@ import Alamofire
 
 let VERSION_URL = "https://raw.githubusercontent.com/learning/node-box/master/data.json"
 
-class VersionManager {
+class Store {
     static private var directory: URL? = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle.main.bundleIdentifier!, isDirectory: true)
+    static private var store:Store? = nil;
+    
+    var branches:Array<Branch>;
+    var versions:Array<Version>;
+
+    init(data: Dictionary<String, Any>) {
+        self.branches = (data["branches"] as! Array<Dictionary<String, String>>).map { Branch(data: $0) }
+        self.versions = (data["versions"] as! Array<Dictionary<String, Any>>).map { Version(data: $0) }
+    }
+    
+    static public func getStore(onSuccess success: @escaping (Store) -> Void) {
+        if store != nil {
+            // Store exists
+            success(store!)
+        } else {
+            // Initialize needed
+            var data = getData()
+            if data != nil {
+                print("file exists.")
+                store = Store(data: data!)
+                success(store!)
+            } else {
+                print("file dose not exists, downloading...")
+                updateDownloadList {
+                    data = getData()
+                    if data != nil {
+                        store = Store(data: data!)
+                        success(store!)
+                    } else {
+                        NotificationCenter.default.post(name: Notification.Name("alert"), object: "Download error, please try again.")
+                    }
+                }
+            }
+        }
+    }
 
     /**
      * Get a local file from file system
@@ -68,23 +103,17 @@ class VersionManager {
      * - **data["branches"]**: All available version branches
      * - **data["versions"]**: All downloadable version list
      */
-    static func getData () -> Dictionary<String, Array<Dictionary<String, Any>>>? {
+    static private func getData () -> Dictionary<String, Any>? {
         let file: URL? = getFile(name: "data.json")
         if file != nil {
-            do {
-                let data: Dictionary<String, Array<Dictionary<String, Any>>> =
-                    try JSONSerialization.jsonObject(with: Data(contentsOf: file!), options: []) as! Dictionary<String, Array<Dictionary<String, Any>>>
-                return data
-            } catch {
-                return nil
-            }
-
+            let data = try! JSONSerialization.jsonObject(with: Data(contentsOf: file!), options: [])
+            return data as? Dictionary<String, Any>
         } else {
             return nil
         }
     }
     
-    static func updateDownloadList (onSuccess success: @escaping () -> Void) {
+    static private func updateDownloadList (onSuccess success: @escaping () -> Void) {
         Alamofire.request(VERSION_URL).responseJSON { response in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 // Write json to file

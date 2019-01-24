@@ -17,7 +17,9 @@
 		B06D8EDC212E88F500B65EEE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B06D8EDB212E88F500B65EEE /* Assets.xcassets */; };
 		B06D8EDF212E88F500B65EEE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B06D8EDD212E88F500B65EEE /* Main.storyboard */; };
 		B06D8EE8212EB5FB00B65EEE /* WindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D8EE7212EB5FB00B65EEE /* WindowController.swift */; };
-		B06D8EEA212FB87A00B65EEE /* VersionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D8EE9212FB87A00B65EEE /* VersionManager.swift */; };
+		B06D8EEA212FB87A00B65EEE /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = B06D8EE9212FB87A00B65EEE /* Store.swift */; };
+		B0EAC05921F995E600E48C15 /* Branch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAC05821F995E600E48C15 /* Branch.swift */; };
+		B0EAC05B21F9A11C00E48C15 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0EAC05A21F9A11C00E48C15 /* Version.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -46,7 +48,9 @@
 		B06D8EDE212E88F500B65EEE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B06D8EE0212E88F500B65EEE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B06D8EE7212EB5FB00B65EEE /* WindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindowController.swift; sourceTree = "<group>"; };
-		B06D8EE9212FB87A00B65EEE /* VersionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionManager.swift; sourceTree = "<group>"; };
+		B06D8EE9212FB87A00B65EEE /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		B0EAC05821F995E600E48C15 /* Branch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Branch.swift; sourceTree = "<group>"; };
+		B0EAC05A21F9A11C00E48C15 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		B0F19CEF2133ABC0005C7BD2 /* node-box.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = "node-box.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -96,7 +100,9 @@
 				B066C06C2133D1FC005F126B /* DownloadViewController.swift */,
 				B052CED7213688CA004B5E87 /* VersionListViewController.swift */,
 				B052CED92136987E004B5E87 /* VersionListView.swift */,
-				B06D8EE9212FB87A00B65EEE /* VersionManager.swift */,
+				B06D8EE9212FB87A00B65EEE /* Store.swift */,
+				B0EAC05821F995E600E48C15 /* Branch.swift */,
+				B0EAC05A21F9A11C00E48C15 /* Version.swift */,
 				B06D8EDB212E88F500B65EEE /* Assets.xcassets */,
 				B06D8EDD212E88F500B65EEE /* Main.storyboard */,
 				B06D8EE0212E88F500B65EEE /* Info.plist */,
@@ -182,11 +188,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B06D8EEA212FB87A00B65EEE /* VersionManager.swift in Sources */,
+				B06D8EEA212FB87A00B65EEE /* Store.swift in Sources */,
+				B0EAC05B21F9A11C00E48C15 /* Version.swift in Sources */,
 				B06D8EDA212E88F400B65EEE /* TabViewController.swift in Sources */,
 				B06D8EE8212EB5FB00B65EEE /* WindowController.swift in Sources */,
 				B066C06D2133D1FC005F126B /* DownloadViewController.swift in Sources */,
 				B052CEDA2136987E004B5E87 /* VersionListView.swift in Sources */,
+				B0EAC05921F995E600E48C15 /* Branch.swift in Sources */,
 				B06D8ED8212E88F400B65EEE /* AppDelegate.swift in Sources */,
 				B052CED8213688CA004B5E87 /* VersionListViewController.swift in Sources */,
 			);
