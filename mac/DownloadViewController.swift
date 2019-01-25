@@ -22,6 +22,7 @@ class DownloadViewController: NSSplitViewController,
     fileprivate enum CellIdentifiers {
         static let VersionCell = "VERSION_CELL"
         static let DateCell = "DATE_CELL"
+        static let DownloadCell = "DOWNLOAD_CELL"
     }
     
     var store: Store?;
@@ -31,10 +32,11 @@ class DownloadViewController: NSSplitViewController,
         super.viewDidLoad()
         sidebarView.expandItem(rootElement)
         self.initStore()
+        
     }
     
     /**
-     * Prepare the downloadable version list for the app
+     * Prepare the store for download list
      */
     func initStore() {
         Store.getStore { (s) -> Void in
@@ -133,7 +135,16 @@ class DownloadViewController: NSSplitViewController,
             text = item.date
             identifier = CellIdentifiers.DateCell
         } else if tableColumn == tableView.tableColumns[2] {
-            
+            if item.isDownloading {
+                text = String(format: "%.0f%%", item.percentage)
+            } else if item.isDownloaded {
+                text = "Downloaded"
+            } else if item.isError {
+                text = "Error, try again"
+            } else {
+                text = "Double click to download"
+            }
+            identifier = CellIdentifiers.DownloadCell
         }
 
         if let cell = tableView.makeView(withIdentifier: NSUserInterfaceItemIdentifier(rawValue: identifier), owner: nil) as? NSTableCellView {
@@ -142,5 +153,21 @@ class DownloadViewController: NSSplitViewController,
         }
 
         return nil
+    }
+
+    @IBAction func doubleClick(_ sender: NSTableView) {
+        if sender.clickedRow > -1 {
+            if let version = currentList?[ sender.clickedRow ] {
+                if version.isDownloading || version.isDownloaded {
+                    print("no action")
+                } else {
+                    version.download {
+                        self.tableView.reloadData()
+                    }
+                }
+            }
+        } else {
+            print("no row clicked")
+        }
     }
 }

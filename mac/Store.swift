@@ -12,7 +12,6 @@ import Alamofire
 let VERSION_URL = "https://raw.githubusercontent.com/learning/node-box/master/data.json"
 
 class Store {
-    static private var directory: URL? = FileManager.default.urls(for: .applicationSupportDirectory, in: .userDomainMask).first?.appendingPathComponent(Bundle.main.bundleIdentifier!, isDirectory: true)
     static private var store:Store? = nil;
     
     var branches:Array<Branch>;
@@ -21,6 +20,18 @@ class Store {
     init(data: Dictionary<String, Any>) {
         self.branches = (data["branches"] as! Array<Dictionary<String, String>>).map { Branch(data: $0) }
         self.versions = (data["versions"] as! Array<Dictionary<String, Any>>).map { Version(data: $0) }
+        do {
+            let files = try FileManager.default.contentsOfDirectory(at: Utils.directory!, includingPropertiesForKeys: nil)
+            let dirs = files.filter { $0.hasDirectoryPath }
+                .map { $0.path.components(separatedBy: "/").last }
+            dirs.forEach { dir in
+                versions.first(where: { $0.filename == dir })?.isDownloaded = true
+            }
+        } catch {
+            NotificationCenter.default.post(name: Notification.Name("alert"), object: "Error: list node.js downloaded versions")
+        }
+        let ver = Utils.runAndGetOutput("readlink", "current")?.trimmingCharacters(in: NSCharacterSet.newlines)
+        versions.first(where: { $0.filename == ver })?.isActive = true
     }
     
     static public func getStore(onSuccess success: @escaping (Store) -> Void) {
@@ -60,7 +71,7 @@ class Store {
      *   - name: The file's name
      */
     static private func getFile(name: String) -> URL? {
-        if let pathComponent = directory?.appendingPathComponent(name) {
+        if let pathComponent = Utils.directory?.appendingPathComponent(name) {
             let filePath = pathComponent.path
             let fileManager = FileManager.default
             if fileManager.fileExists(atPath: filePath) {
@@ -82,15 +93,15 @@ class Store {
      */
     static private func writeFile(name: String, content: String) -> Bool {
         // If directory not exists, create it
-        if !FileManager.default.fileExists(atPath: (directory?.path)!) {
+        if !FileManager.default.fileExists(atPath: (Utils.directory?.path)!) {
             do {
-                try FileManager.default.createDirectory(at: directory!, withIntermediateDirectories: false, attributes: nil)
+                try FileManager.default.createDirectory(at: Utils.directory!, withIntermediateDirectories: false, attributes: nil)
             } catch {
-                print("Create directory \(directory!.path) failed")
+                print("Create directory \(Utils.directory!.path) failed")
                 return false
             }
         }
-        let file: URL? = directory?.appendingPathComponent(name)
+        let file: URL? = Utils.directory?.appendingPathComponent(name)
         if file != nil {
             do {
                 try content.write(to: file!, atomically: false, encoding: String.Encoding.utf8)
@@ -122,10 +133,10 @@ class Store {
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 // Write json to file
                 if writeFile(name: "data.json", content: utf8Text) {
-                    print("Wrote to \(directory!.path) success!")
+                    print("Wrote to \(Utils.directory!.path) success!")
                     success()
                 } else {
-                    NotificationCenter.default.post(name: Notification.Name("alert"), object: "wrote to \(directory!.path) failed")
+                    NotificationCenter.default.post(name: Notification.Name("alert"), object: "wrote to \(Utils.directory!.path) failed")
                 }
             }
         }

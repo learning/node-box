@@ -24,7 +24,6 @@ class WindowController: NSWindowController {
         var frame = self.window?.frame
         frame?.size = NSSize(width: 620, height: 350)
         self.window?.setFrame(frame!, display: true)
-
     }
 
     @IBAction func tabAction(_ sender: NSSegmentedControl) {

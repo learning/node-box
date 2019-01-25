@@ -718,7 +718,7 @@
                                     <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sma-bh-gC0">
                                         <rect key="frame" x="0.0" y="14" width="204" height="17"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Version: Node.js 8.10.0" id="5Fm-KL-l2e">
+                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Version" id="5Fm-KL-l2e">
                                             <font key="font" metaFont="system"/>
                                             <color key="textColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
                                             <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
@@ -816,7 +816,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="qgf-8d-cAX">
+                                                        <tableCellView identifier="VERSION_CELL" id="qgf-8d-cAX">
                                                             <rect key="frame" x="1" y="1" width="116" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -849,7 +849,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="Mjn-om-FRo">
+                                                        <tableCellView identifier="DATE_CELL" id="Mjn-om-FRo">
                                                             <rect key="frame" x="120" y="1" width="100" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -870,7 +870,7 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                                 <tableColumn width="200" minWidth="40" maxWidth="1000" id="FCK-MN-vb2">
-                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border" title="Action">
+                                                    <tableHeaderCell key="headerCell" lineBreakMode="truncatingTail" borderStyle="border">
                                                         <font key="font" metaFont="smallSystem"/>
                                                         <color key="textColor" name="headerTextColor" catalog="System" colorSpace="catalog"/>
                                                         <color key="backgroundColor" name="headerColor" catalog="System" colorSpace="catalog"/>
@@ -882,7 +882,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="sbF-al-GT5">
+                                                        <tableCellView identifier="ACTION_CELL" id="sbF-al-GT5">
                                                             <rect key="frame" x="223" y="1" width="200" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -903,6 +903,11 @@
                                                     </prototypeCellViews>
                                                 </tableColumn>
                                             </tableColumns>
+                                            <connections>
+                                                <action trigger="doubleAction" selector="doubleClick:" target="lJa-C7-a57" id="BHP-js-7ib"/>
+                                                <outlet property="dataSource" destination="lJa-C7-a57" id="5ce-jC-WUF"/>
+                                                <outlet property="delegate" destination="lJa-C7-a57" id="yzA-Vq-Hqa"/>
+                                            </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
@@ -966,6 +971,7 @@
                     </customView>
                     <connections>
                         <outlet property="emptyBox" destination="XhX-17-J3n" id="6q1-YI-pSt"/>
+                        <outlet property="versionView" destination="UbR-P8-ihK" id="13B-4S-U2q"/>
                     </connections>
                 </viewController>
                 <customObject id="J57-eZ-a42" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -1162,7 +1168,7 @@
                                                     </textFieldCell>
                                                     <tableColumnResizingMask key="resizingMask" resizeWithTable="YES" userResizable="YES"/>
                                                     <prototypeCellViews>
-                                                        <tableCellView id="edq-6e-xy3">
+                                                        <tableCellView identifier="DOWNLOAD_CELL" id="edq-6e-xy3">
                                                             <rect key="frame" x="290" y="1" width="64" height="17"/>
                                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                                             <subviews>
@@ -1184,13 +1190,14 @@
                                                 </tableColumn>
                                             </tableColumns>
                                             <connections>
+                                                <action trigger="doubleAction" selector="doubleClick:" target="zfF-Kx-ABF" id="MyX-Le-jeP"/>
                                                 <outlet property="dataSource" destination="zfF-Kx-ABF" id="a0C-O5-oA7"/>
                                                 <outlet property="delegate" destination="zfF-Kx-ABF" id="LMq-eh-Ft3"/>
                                             </connections>
                                         </tableView>
                                     </subviews>
                                 </clipView>
-                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" doubleValue="0.97014925373134331" horizontal="YES" id="Dfq-nP-3hp">
+                                <scroller key="horizontalScroller" wantsLayer="YES" verticalHuggingPriority="750" horizontal="YES" id="Dfq-nP-3hp">
                                     <rect key="frame" x="0.0" y="284" width="289" height="16"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </scroller>
