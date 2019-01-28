@@ -43,7 +43,7 @@
 		B052CED92136987E004B5E87 /* VersionListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionListView.swift; sourceTree = "<group>"; };
 		B066C0692133CFBD005F126B /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/Mac/Alamofire.framework; sourceTree = "<group>"; };
 		B066C06C2133D1FC005F126B /* DownloadViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadViewController.swift; sourceTree = "<group>"; };
-		B06D8ED4212E88F300B65EEE /* node-box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "node-box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B06D8ED4212E88F300B65EEE /* Node Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Node Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B06D8ED7212E88F400B65EEE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B06D8ED9212E88F400B65EEE /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		B06D8EDB212E88F500B65EEE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -90,7 +90,7 @@
 		B06D8ED5212E88F300B65EEE /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B06D8ED4212E88F300B65EEE /* node-box.app */,
+				B06D8ED4212E88F300B65EEE /* Node Box.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,9 +120,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B06D8ED3212E88F300B65EEE /* node-box */ = {
+		B06D8ED3212E88F300B65EEE /* Node Box */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B06D8EE4212E88F500B65EEE /* Build configuration list for PBXNativeTarget "node-box" */;
+			buildConfigurationList = B06D8EE4212E88F500B65EEE /* Build configuration list for PBXNativeTarget "Node Box" */;
 			buildPhases = (
 				B06D8ED0212E88F300B65EEE /* Sources */,
 				B06D8ED1212E88F300B65EEE /* Frameworks */,
@@ -133,9 +133,9 @@
 			);
 			dependencies = (
 			);
-			name = "node-box";
+			name = "Node Box";
 			productName = "node-box";
-			productReference = B06D8ED4212E88F300B65EEE /* node-box.app */;
+			productReference = B06D8ED4212E88F300B65EEE /* Node Box.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -159,7 +159,7 @@
 					};
 				};
 			};
-			buildConfigurationList = B06D8ECF212E88F300B65EEE /* Build configuration list for PBXProject "node-box" */;
+			buildConfigurationList = B06D8ECF212E88F300B65EEE /* Build configuration list for PBXProject "Node Box" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -172,7 +172,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B06D8ED3212E88F300B65EEE /* node-box */,
+				B06D8ED3212E88F300B65EEE /* Node Box */,
 			);
 		};
 /* End PBXProject section */
@@ -384,7 +384,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B06D8ECF212E88F300B65EEE /* Build configuration list for PBXProject "node-box" */ = {
+		B06D8ECF212E88F300B65EEE /* Build configuration list for PBXProject "Node Box" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B06D8EE2212E88F500B65EEE /* Debug */,
@@ -393,7 +393,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B06D8EE4212E88F500B65EEE /* Build configuration list for PBXNativeTarget "node-box" */ = {
+		B06D8EE4212E88F500B65EEE /* Build configuration list for PBXNativeTarget "Node Box" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B06D8EE5212E88F500B65EEE /* Debug */,

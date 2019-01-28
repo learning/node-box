@@ -25,5 +25,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
         return true
     }
+
+    @IBAction func help(_ sender: Any) {
+        NSWorkspace.shared.open(URL.init(string: "https://github.com/learning/node-box")!)
+    }
+
 }
 

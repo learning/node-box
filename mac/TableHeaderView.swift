@@ -16,7 +16,7 @@ class TableHeaderView: NSTableHeaderView {
         // Remove 1px border on the top
         let topBorderBox = NSRect(x: 0, y: 0, width: bounds.size.width, height: 1)
         if dirtyRect.intersects(topBorderBox) {
-            NSColor.white.setFill()
+            NSColor.controlBackgroundColor.setFill()
             topBorderBox.fill()
         }
     }

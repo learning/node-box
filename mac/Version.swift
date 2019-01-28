@@ -59,6 +59,7 @@ class Version {
                     self.percentage = 100
                     self.isDownloaded = true
                     progress()
+                    NotificationCenter.default.post(name: Notification.Name("reload-list"), object: nil)
                 } else {
                     self.isError = true
                     self.percentage = 0

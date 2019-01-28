@@ -35,6 +35,6 @@ class Utils {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = String(data: data, encoding: String.Encoding.utf8)
         
-        return output
+        return output?.trimmingCharacters(in: NSCharacterSet.newlines)
     }
 }

@@ -17,13 +17,16 @@ class Store {
     var branches:Array<Branch> = [];
     var versions:Array<Version> = [];
     
-    init (data: Dictionary<String, Any>) {
+    init (data: Dictionary<String, Any>?) {
         self.updateWith(data: data)
     }
 
-    func updateWith(data: Dictionary<String, Any>) {
-        self.branches = (data["branches"] as! Array<Dictionary<String, String>>).map { Branch(data: $0) }
-        self.versions = (data["versions"] as! Array<Dictionary<String, Any>>).map { Version(data: $0) }
+    func updateWith(data: Dictionary<String, Any>?) {
+        if data == nil {
+            return
+        }
+        self.branches = (data!["branches"] as! Array<Dictionary<String, String>>).map { Branch(data: $0) }
+        self.versions = (data!["versions"] as! Array<Dictionary<String, Any>>).map { Version(data: $0) }
         do {
             let files = try FileManager.default.contentsOfDirectory(at: Utils.directory!, includingPropertiesForKeys: nil)
             let dirs = files.filter { $0.hasDirectoryPath }
@@ -34,46 +37,37 @@ class Store {
         } catch {
             NotificationCenter.default.post(name: Notification.Name("alert"), object: "Error: list node.js downloaded versions")
         }
-        let ver = Utils.runAndGetOutput("readlink", "current")?.trimmingCharacters(in: NSCharacterSet.newlines)
+        let ver = Utils.runAndGetOutput("readlink", "current")
         versions.first(where: { $0.filename == ver })?.isActive = true
     }
     
-    static public func getStore(onSuccess success: @escaping (Store) -> Void) {
+    static public func getStore() -> Store {
         if store != nil {
             // Store exists
-            success(store!)
+            return store!
         } else {
             // Initialize needed
-            var data = getData()
+            let data = getData()
             if data != nil {
                 print("file exists.")
                 store = Store(data: data!)
-                success(store!)
+                return store!
             } else {
                 print("file dose not exists, downloading...")
-                updateDownloadList {
-                    data = getData()
-                    if data != nil {
-                        store = Store(data: data!)
-                        success(store!)
-                    } else {
-                        NotificationCenter.default.post(name: Notification.Name("alert"), object: "Download error, please try again.")
-                    }
+                store = Store(data: nil)
+                updateDownloadList { (data) -> Void in
+                    store?.updateWith(data: data)
+                    NotificationCenter.default.post(name: Notification.Name("reload-list"), object: nil)
                 }
+                return store!
             }
         }
     }
     
     public func refresh(onSuccess success: @escaping () -> Void) {
-        // TODO: refresh version list
-        Store.updateDownloadList {
-            let data = Store.getData()
-            if data != nil {
-                self.updateWith(data: data!)
-                success()
-            } else {
-                NotificationCenter.default.post(name: Notification.Name("alert"), object: "Download error, please try again.")
-            }
+        Store.updateDownloadList { (data) -> Void in
+            self.updateWith(data: data)
+            success()
         }
     }
 
@@ -141,13 +135,14 @@ class Store {
         }
     }
     
-    static private func updateDownloadList (onSuccess success: @escaping () -> Void) {
+    static private func updateDownloadList (onSuccess success: @escaping (_ data: Dictionary<String, Any>) -> Void) {
         Alamofire.request(VERSION_URL).responseJSON { response in
             if let data = response.data, let utf8Text = String(data: data, encoding: .utf8) {
                 // Write json to file
                 if writeFile(name: "data.json", content: utf8Text) {
                     print("Wrote to \(Utils.directory!.path) success!")
-                    success()
+                    let dict = try! JSONSerialization.jsonObject(with: data, options: [])
+                    success((dict as? Dictionary<String, Any>)!)
                 } else {
                     NotificationCenter.default.post(name: Notification.Name("alert"), object: "wrote to \(Utils.directory!.path) failed")
                 }

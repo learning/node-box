@@ -31,6 +31,7 @@ class DownloadViewController: NSSplitViewController,
     override func viewDidLoad() {
         super.viewDidLoad()
         NotificationCenter.default.addObserver(self, selector: #selector(self.refresh(notification:)), name: Notification.Name("refresh-list"), object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.reload(notification:)), name: Notification.Name("reload-list"), object: nil)
 
         sidebarView.expandItem(rootElement)
         self.initStore()
@@ -40,11 +41,9 @@ class DownloadViewController: NSSplitViewController,
      * Prepare the store for download list
      */
     func initStore() {
-        Store.getStore { (s) -> Void in
-            self.store = s
-            self.sidebarView.reloadData()
-            self.sidebarView.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
-        }
+        self.store = Store.getStore()
+        self.sidebarView.reloadData()
+        self.sidebarView.selectRowIndexes(IndexSet(integer: 1), byExtendingSelection: false)
     }
     
     /**
@@ -172,13 +171,20 @@ class DownloadViewController: NSSplitViewController,
         }
     }
     
-    /* ---------- Refresh ---------- */
+    /* ---------- Refresh & Reload ---------- */
     
     @objc func refresh(notification: Notification) {
         NotificationCenter.default.post(name: NSNotification.Name("show-loading"), object: nil)
         self.store?.refresh {
             NotificationCenter.default.post(name: NSNotification.Name("hide-loading"), object: nil)
             self.tableView.reloadData()
+            self.sidebarView.reloadData()
         }
+    }
+    
+    @objc func reload(notification: Notification) {
+        print("reload-list")
+        self.tableView.reloadData()
+        self.sidebarView.reloadData()
     }
 }
