@@ -14,10 +14,14 @@ let VERSION_URL = "https://raw.githubusercontent.com/learning/node-box/master/da
 class Store {
     static private var store:Store? = nil;
     
-    var branches:Array<Branch>;
-    var versions:Array<Version>;
+    var branches:Array<Branch> = [];
+    var versions:Array<Version> = [];
+    
+    init (data: Dictionary<String, Any>) {
+        self.updateWith(data: data)
+    }
 
-    init(data: Dictionary<String, Any>) {
+    func updateWith(data: Dictionary<String, Any>) {
         self.branches = (data["branches"] as! Array<Dictionary<String, String>>).map { Branch(data: $0) }
         self.versions = (data["versions"] as! Array<Dictionary<String, Any>>).map { Version(data: $0) }
         do {
@@ -62,6 +66,15 @@ class Store {
     
     public func refresh(onSuccess success: @escaping () -> Void) {
         // TODO: refresh version list
+        Store.updateDownloadList {
+            let data = Store.getData()
+            if data != nil {
+                self.updateWith(data: data!)
+                success()
+            } else {
+                NotificationCenter.default.post(name: Notification.Name("alert"), object: "Download error, please try again.")
+            }
+        }
     }
 
     /**

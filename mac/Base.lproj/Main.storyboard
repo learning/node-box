@@ -711,19 +711,19 @@
                                         </connections>
                                     </segmentedControl>
                                 </toolbarItem>
-                                <toolbarItem implicitItemIdentifier="383DBE9B-7B43-4574-BC60-B642A3E4B8F8" label="Current Version" paletteLabel="Current Version" id="mYe-hx-4aL">
+                                <toolbarItem implicitItemIdentifier="507EBD12-4645-4D32-A77E-DB5215F3C491" label="Refresh" paletteLabel="Refresh" image="NSRefreshTemplate" sizingBehavior="auto" id="NDs-Eu-f3z">
                                     <nil key="toolTip"/>
-                                    <size key="minSize" width="38" height="17"/>
-                                    <size key="maxSize" width="204" height="17"/>
-                                    <textField key="view" horizontalHuggingPriority="251" verticalHuggingPriority="750" id="sma-bh-gC0">
-                                        <rect key="frame" x="0.0" y="14" width="204" height="17"/>
+                                    <button key="view" verticalHuggingPriority="750" id="y8A-lY-io1">
+                                        <rect key="frame" x="2" y="14" width="44" height="43"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                        <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Current Version" id="5Fm-KL-l2e">
+                                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSRefreshTemplate" imagePosition="only" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Jrw-5R-20b">
+                                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
                                             <font key="font" metaFont="system"/>
-                                            <color key="textColor" name="controlDarkShadowColor" catalog="System" colorSpace="catalog"/>
-                                            <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
-                                        </textFieldCell>
-                                    </textField>
+                                        </buttonCell>
+                                        <connections>
+                                            <action selector="refresh:" target="B8D-0N-5wS" id="8yW-ai-qWn"/>
+                                        </connections>
+                                    </button>
                                 </toolbarItem>
                                 <toolbarItem implicitItemIdentifier="B43759D6-47A5-4A0E-9292-1D720BC75B53" label="Loading Indicator" paletteLabel="Loading Indicator" tag="-1" id="b4L-wM-Ge9" userLabel="Loading Indicator">
                                     <nil key="toolTip"/>
@@ -739,7 +739,7 @@
                                 <toolbarItem reference="H3u-9J-tuD"/>
                                 <toolbarItem reference="b4L-wM-Ge9"/>
                                 <toolbarItem reference="VUM-zR-QcG"/>
-                                <toolbarItem reference="mYe-hx-4aL"/>
+                                <toolbarItem reference="NDs-Eu-f3z"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -748,6 +748,7 @@
                     </window>
                     <connections>
                         <outlet property="loadingIndicator" destination="LVL-Jd-J81" id="gx8-GL-GVl"/>
+                        <outlet property="refreshButton" destination="y8A-lY-io1" id="9Ab-dR-loR"/>
                         <outlet property="tabControl" destination="DSK-0o-KEh" id="5Cl-Qf-beu"/>
                         <segue destination="6NC-pZ-gSe" kind="relationship" relationship="window.shadowedContentViewController" id="KNi-gb-cfu"/>
                     </connections>
@@ -1229,6 +1230,7 @@
     <resources>
         <image name="NSActionTemplate" width="14" height="14"/>
         <image name="NSListViewTemplate" width="14" height="10"/>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
         <image name="NSRevealFreestandingTemplate" width="14" height="14"/>
     </resources>
 </document>

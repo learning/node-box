@@ -49,6 +49,19 @@
         {
             "npm": "6.5.0",
             "url": {
+                "linux": "https://nodejs.org/download/release/v11.8.0/node-v11.8.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v11.8.0/node-v11.8.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v11.8.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v11.8.0/node-v11.8.0-win-x64.7z"
+            },
+            "v8": "7.0.276.38",
+            "version": "11.8.0",
+            "date": "2019-01-24",
+            "node-module-version": "67"
+        },
+        {
+            "npm": "6.5.0",
+            "url": {
                 "linux": "https://nodejs.org/download/release/v11.7.0/node-v11.7.0-linux-x64.tar.xz",
                 "darwin": "https://nodejs.org/download/release/v11.7.0/node-v11.7.0-darwin-x64.tar.xz",
                 "shasum256": "https://nodejs.org/download/release/v11.7.0/SHASUMS256.txt",

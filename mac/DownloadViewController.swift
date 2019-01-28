@@ -30,9 +30,10 @@ class DownloadViewController: NSSplitViewController,
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.refresh(notification:)), name: Notification.Name("refresh-list"), object: nil)
+
         sidebarView.expandItem(rootElement)
         self.initStore()
-        
     }
     
     /**
@@ -168,6 +169,16 @@ class DownloadViewController: NSSplitViewController,
             }
         } else {
             print("no row clicked")
+        }
+    }
+    
+    /* ---------- Refresh ---------- */
+    
+    @objc func refresh(notification: Notification) {
+        NotificationCenter.default.post(name: NSNotification.Name("show-loading"), object: nil)
+        self.store?.refresh {
+            NotificationCenter.default.post(name: NSNotification.Name("hide-loading"), object: nil)
+            self.tableView.reloadData()
         }
     }
 }
