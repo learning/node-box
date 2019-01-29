@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B03DE68A220056CC001490E9 /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B03DE685220055CF001490E9 /* AFNetworking.framework */; };
-		B03DE68B220056CC001490E9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B03DE685220055CF001490E9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		B00C6911220062060063867A /* AFNetworking.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B00C6910220062060063867A /* AFNetworking.framework */; };
+		B00C6912220062060063867A /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B00C6910220062060063867A /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B03DE68F220058F5001490E9 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03DE68E220058F5001490E9 /* WindowController.m */; };
 		B086FF76220052A000C5BF2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B086FF75220052A000C5BF2D /* AppDelegate.m */; };
 		B086FF7B220052A200C5BF2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B086FF7A220052A200C5BF2D /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				B03DE68B220056CC001490E9 /* AFNetworking.framework in Embed Frameworks */,
+				B00C6912220062060063867A /* AFNetworking.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,7 +31,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		B03DE685220055CF001490E9 /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = AFNetworking.framework; sourceTree = "<group>"; };
+		B00C6910220062060063867A /* AFNetworking.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AFNetworking.framework; path = Carthage/Build/Mac/AFNetworking.framework; sourceTree = "<group>"; };
 		B03DE68D220058F5001490E9 /* WindowController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WindowController.h; sourceTree = "<group>"; };
 		B03DE68E220058F5001490E9 /* WindowController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = WindowController.m; sourceTree = "<group>"; };
 		B086FF71220052A000C5BF2D /* Node Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Node Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -49,26 +49,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B03DE68A220056CC001490E9 /* AFNetworking.framework in Frameworks */,
+				B00C6911220062060063867A /* AFNetworking.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		B03DE689220055E5001490E9 /* frameworks */ = {
+		B00C690F220061E20063867A /* frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B03DE685220055CF001490E9 /* AFNetworking.framework */,
+				B00C6910220062060063867A /* AFNetworking.framework */,
 			);
-			path = frameworks;
+			name = frameworks;
 			sourceTree = "<group>";
 		};
 		B086FF68220052A000C5BF2D = {
 			isa = PBXGroup;
 			children = (
 				B086FF73220052A000C5BF2D /* src */,
-				B03DE689220055E5001490E9 /* frameworks */,
+				B00C690F220061E20063867A /* frameworks */,
 				B086FF72220052A000C5BF2D /* products */,
 			);
 			sourceTree = "<group>";
@@ -309,7 +309,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/frameworks",
 				);
 				INFOPLIST_FILE = src/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -333,7 +332,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/Mac",
-					"$(PROJECT_DIR)/frameworks",
 				);
 				INFOPLIST_FILE = src/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
