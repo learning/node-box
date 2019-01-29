@@ -11,7 +11,6 @@
 		B03DE68B220056CC001490E9 /* AFNetworking.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = B03DE685220055CF001490E9 /* AFNetworking.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		B03DE68F220058F5001490E9 /* WindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = B03DE68E220058F5001490E9 /* WindowController.m */; };
 		B086FF76220052A000C5BF2D /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B086FF75220052A000C5BF2D /* AppDelegate.m */; };
-		B086FF79220052A000C5BF2D /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B086FF78220052A000C5BF2D /* ViewController.m */; };
 		B086FF7B220052A200C5BF2D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B086FF7A220052A200C5BF2D /* Assets.xcassets */; };
 		B086FF7E220052A200C5BF2D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B086FF7C220052A200C5BF2D /* Main.storyboard */; };
 		B086FF81220052A200C5BF2D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B086FF80220052A200C5BF2D /* main.m */; };
@@ -38,8 +37,6 @@
 		B086FF71220052A000C5BF2D /* Node Box.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Node Box.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B086FF74220052A000C5BF2D /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B086FF75220052A000C5BF2D /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B086FF77220052A000C5BF2D /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B086FF78220052A000C5BF2D /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		B086FF7A220052A200C5BF2D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B086FF7D220052A200C5BF2D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B086FF7F220052A200C5BF2D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -89,8 +86,6 @@
 			children = (
 				B086FF74220052A000C5BF2D /* AppDelegate.h */,
 				B086FF75220052A000C5BF2D /* AppDelegate.m */,
-				B086FF77220052A000C5BF2D /* ViewController.h */,
-				B086FF78220052A000C5BF2D /* ViewController.m */,
 				B03DE68D220058F5001490E9 /* WindowController.h */,
 				B03DE68E220058F5001490E9 /* WindowController.m */,
 				B086FF7A220052A200C5BF2D /* Assets.xcassets */,
@@ -172,7 +167,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B086FF79220052A000C5BF2D /* ViewController.m in Sources */,
 				B03DE68F220058F5001490E9 /* WindowController.m in Sources */,
 				B086FF81220052A200C5BF2D /* main.m in Sources */,
 				B086FF76220052A000C5BF2D /* AppDelegate.m in Sources */,

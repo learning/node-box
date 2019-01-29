@@ -685,24 +685,23 @@
         <scene sceneID="R2V-B0-nI4">
             <objects>
                 <windowController id="B8D-0N-5wS" customClass="WindowController" sceneMemberID="viewController">
-                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" id="IQv-IB-iLA">
+                    <window key="window" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" releasedWhenClosed="NO" visibleAtLaunch="NO" animationBehavior="default" titlebarAppearsTransparent="YES" titleVisibility="hidden" id="IQv-IB-iLA">
                         <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES" resizable="YES" fullSizeContentView="YES"/>
                         <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
                         <rect key="contentRect" x="196" y="240" width="480" height="270"/>
                         <rect key="screenRect" x="0.0" y="0.0" width="1680" height="1027"/>
-                        <toolbar key="toolbar" implicitIdentifier="C105A657-7C03-4D99-B0DA-C15847B09713" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="regular" id="dnr-oc-rnz">
+                        <toolbar key="toolbar" implicitIdentifier="C105A657-7C03-4D99-B0DA-C15847B09713" autosavesConfiguration="NO" displayMode="iconOnly" sizeMode="small" id="dnr-oc-rnz">
                             <allowedToolbarItems>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowColorsItem" id="C6M-ct-1p3"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarShowFontsItem" id="WqJ-Rm-Gn7"/>
-                                <toolbarItem implicitItemIdentifier="NSToolbarPrintItem" id="b6v-5O-BC4"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarSpaceItem" id="ogA-Yc-jEm"/>
                                 <toolbarItem implicitItemIdentifier="NSToolbarFlexibleSpaceItem" id="uhw-Ya-8es"/>
+                                <toolbarItem implicitItemIdentifier="A5A6DA83-6513-44A5-BD0C-D4588259D79F" label="Refresh" paletteLabel="Refresh" tag="-1" image="NSRefreshTemplate" id="2Ss-MI-pWF">
+                                    <size key="minSize" width="16" height="16"/>
+                                    <size key="maxSize" width="16" height="16"/>
+                                </toolbarItem>
                             </allowedToolbarItems>
                             <defaultToolbarItems>
-                                <toolbarItem reference="C6M-ct-1p3"/>
-                                <toolbarItem reference="WqJ-Rm-Gn7"/>
                                 <toolbarItem reference="uhw-Ya-8es"/>
-                                <toolbarItem reference="b6v-5O-BC4"/>
+                                <toolbarItem reference="2Ss-MI-pWF"/>
                             </defaultToolbarItems>
                         </toolbar>
                         <connections>
@@ -710,25 +709,66 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="cq2-FE-JQM"/>
+                        <segue destination="TPS-zb-ch6" kind="relationship" relationship="window.shadowedContentViewController" id="3lj-1Y-9W2"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
         </scene>
-        <!--View Controller-->
-        <scene sceneID="hIz-AP-VOD">
+        <!--Split View Controller-->
+        <scene sceneID="iY0-Lz-fZt">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" sceneMemberID="viewController">
-                    <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                <splitViewController id="TPS-zb-ch6" sceneMemberID="viewController">
+                    <splitViewItems>
+                        <splitViewItem id="P0D-Bg-K67"/>
+                        <splitViewItem id="1Di-cU-IAu"/>
+                    </splitViewItems>
+                    <splitView key="splitView" dividerStyle="thin" vertical="YES" id="cVn-dU-XhM">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <connections>
+                            <outlet property="delegate" destination="TPS-zb-ch6" id="fPj-oa-h7i"/>
+                        </connections>
+                    </splitView>
+                    <connections>
+                        <outlet property="splitView" destination="cVn-dU-XhM" id="TU3-Xe-CsQ"/>
+                        <segue destination="a9K-1x-zZt" kind="relationship" relationship="splitItems" id="gL5-UZ-OiT"/>
+                        <segue destination="Hdm-ka-ys0" kind="relationship" relationship="splitItems" id="AKa-U3-VL2"/>
+                    </connections>
+                </splitViewController>
+                <customObject id="4l2-wB-in1" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="75" y="727"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="rOw-2P-Hht">
+            <objects>
+                <viewController id="a9K-1x-zZt" sceneMemberID="viewController">
+                    <view key="view" id="w1J-GQ-0Ba">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </view>
                 </viewController>
-                <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+                <customObject id="fRt-f8-FlR" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="736" y="516"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="ubc-mD-IRz">
+            <objects>
+                <viewController id="Hdm-ka-ys0" sceneMemberID="viewController">
+                    <view key="view" id="EKe-fg-7fT">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="LJn-gn-stG" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="736" y="955"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="NSRefreshTemplate" width="11" height="15"/>
+    </resources>
 </document>
