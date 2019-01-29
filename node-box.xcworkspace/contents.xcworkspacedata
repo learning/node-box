@@ -2,19 +2,13 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:/Users/Learning/Documents/projects/node-box/Node Box.xcodeproj">
+      location = "group:node-box.xcodeproj">
    </FileRef>
    <Group
-      location = "container:"
-      name = "data">
+      location = "group:New Group"
+      name = "docs">
       <FileRef
-         location = "group:data.json">
-      </FileRef>
-      <FileRef
-         location = "group:scraper">
+         location = "group:../README.md">
       </FileRef>
    </Group>
-   <FileRef
-      location = "group:README.md">
-   </FileRef>
 </Workspace>
