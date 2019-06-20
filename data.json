@@ -47,6 +47,123 @@
     ],
     "versions": [
         {
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v12.4.0/node-v12.4.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v12.4.0/node-v12.4.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v12.4.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v12.4.0/node-v12.4.0-win-x64.7z"
+            },
+            "v8": "7.4.288.27",
+            "version": "12.4.0",
+            "date": "2019-06-04",
+            "node-module-version": "72"
+        },
+        {
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v12.3.1/node-v12.3.1-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v12.3.1/node-v12.3.1-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v12.3.1/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v12.3.1/node-v12.3.1-win-x64.7z"
+            },
+            "v8": "7.4.288.27",
+            "version": "12.3.1",
+            "date": "2019-05-22",
+            "node-module-version": "72"
+        },
+        {
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v12.3.0/node-v12.3.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v12.3.0/node-v12.3.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v12.3.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v12.3.0/node-v12.3.0-win-x64.7z"
+            },
+            "v8": "7.4.288.27",
+            "version": "12.3.0",
+            "date": "2019-05-21",
+            "node-module-version": "72"
+        },
+        {
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v12.2.0/node-v12.2.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v12.2.0/node-v12.2.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v12.2.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v12.2.0/node-v12.2.0-win-x64.7z"
+            },
+            "v8": "7.4.288.21",
+            "version": "12.2.0",
+            "date": "2019-05-07",
+            "node-module-version": "72"
+        },
+        {
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v12.1.0/node-v12.1.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v12.1.0/node-v12.1.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v12.1.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v12.1.0/node-v12.1.0-win-x64.7z"
+            },
+            "v8": "7.4.288.21",
+            "version": "12.1.0",
+            "date": "2019-04-29",
+            "node-module-version": "72"
+        },
+        {
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v12.0.0/node-v12.0.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v12.0.0/node-v12.0.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v12.0.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v12.0.0/node-v12.0.0-win-x64.7z"
+            },
+            "v8": "7.4.288.21",
+            "version": "12.0.0",
+            "date": "2019-04-23",
+            "node-module-version": "72"
+        },
+        {
+            "npm": "6.7.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v11.15.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v11.15.0/node-v11.15.0-win-x64.7z"
+            },
+            "v8": "7.0.276.38",
+            "version": "11.15.0",
+            "date": "2019-04-30",
+            "node-module-version": "67"
+        },
+        {
+            "npm": "6.7.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v11.14.0/node-v11.14.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v11.14.0/node-v11.14.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v11.14.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v11.14.0/node-v11.14.0-win-x64.7z"
+            },
+            "v8": "7.0.276.38",
+            "version": "11.14.0",
+            "date": "2019-04-10",
+            "node-module-version": "67"
+        },
+        {
+            "npm": "6.7.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v11.13.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v11.13.0/node-v11.13.0-win-x64.7z"
+            },
+            "v8": "7.0.276.38",
+            "version": "11.13.0",
+            "date": "2019-03-28",
+            "node-module-version": "67"
+        },
+        {
             "npm": "6.7.0",
             "url": {
                 "linux": "https://nodejs.org/download/release/v11.12.0/node-v11.12.0-linux-x64.tar.xz",
@@ -227,6 +344,20 @@
             "version": "11.0.0",
             "date": "2018-10-23",
             "node-module-version": "67"
+        },
+        {
+            "lts": "Dubnium",
+            "npm": "6.9.0",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v10.16.0/node-v10.16.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v10.16.0/node-v10.16.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v10.16.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v10.16.0/node-v10.16.0-win-x64.7z"
+            },
+            "v8": "6.8.275.32",
+            "version": "10.16.0",
+            "date": "2019-05-28",
+            "node-module-version": "64"
         },
         {
             "lts": "Dubnium",
@@ -768,6 +899,20 @@
             "version": "9.0.0",
             "date": "2017-10-31",
             "node-module-version": "59"
+        },
+        {
+            "lts": "Carbon",
+            "npm": "6.4.1",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v8.16.0/node-v8.16.0-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v8.16.0/node-v8.16.0-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v8.16.0/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v8.16.0/node-v8.16.0-win-x64.7z"
+            },
+            "v8": "6.2.414.77",
+            "version": "8.16.0",
+            "date": "2019-04-16",
+            "node-module-version": "57"
         },
         {
             "lts": "Carbon",
@@ -1422,6 +1567,20 @@
             "version": "7.0.0",
             "date": "2016-10-25",
             "node-module-version": "51"
+        },
+        {
+            "lts": "Boron",
+            "npm": "3.10.10",
+            "url": {
+                "linux": "https://nodejs.org/download/release/v6.17.1/node-v6.17.1-linux-x64.tar.xz",
+                "darwin": "https://nodejs.org/download/release/v6.17.1/node-v6.17.1-darwin-x64.tar.xz",
+                "shasum256": "https://nodejs.org/download/release/v6.17.1/SHASUMS256.txt",
+                "win": "https://nodejs.org/download/release/v6.17.1/node-v6.17.1-win-x64.7z"
+            },
+            "v8": "5.1.281.111",
+            "version": "6.17.1",
+            "date": "2019-04-03",
+            "node-module-version": "48"
         },
         {
             "lts": "Boron",
