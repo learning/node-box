@@ -1,7 +1,7 @@
-#!/usr/bin/python
+#!/usr/bin/python3
 
-from urllib import urlopen
-from HTMLParser import HTMLParser
+import urllib.request
+from html.parser import HTMLParser
 import json
 
 DOWNLOADS = 'url'
@@ -20,6 +20,18 @@ BRANCHES = [
     {
         "name": "All",
         "pattern": ""
+    },
+    {
+        "name": "Node.js 14.x LTS",
+        "pattern": "14."
+    },
+    {
+        "name": "Node.js 13.x",
+        "pattern": "13."
+    },
+    {
+        "name": "Node.js 12.x LTS",
+        "pattern": "12."
     },
     {
         "name": "Node.js 11.x",
@@ -144,8 +156,15 @@ output = {
     'versions': result_list
 }
 parser = NodeVersionsParser()
-res = urlopen('https://nodejs.org/en/download/releases/')
-parser.feed(res.read())
+req = urllib.request.Request(
+    'https://nodejs.org/en/download/releases/',
+    None,
+    {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10.15; rv:79.0) Gecko/20100101 Firefox/79.0'
+    }
+)
+res = urllib.request.urlopen(req)
+parser.feed(res.read().decode('utf-8'))
 file = open('data.json', 'w')
 file.write(json.dumps(output, indent=4, separators=(',', ': ')))
 file.close()
