@@ -5,6 +5,10 @@
             "pattern": ""
         },
         {
+            "name": "Node.js 15.x",
+            "pattern": "15."
+        },
+        {
             "name": "Node.js 14.x LTS",
             "pattern": "14."
         },
@@ -59,6 +63,297 @@
     ],
     "versions": [
         {
+            "version": "15.5.1",
+            "date": "2021-01-04",
+            "v8": "8.6.395.17",
+            "npm": "7.3.0",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.5.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.5.1/node-v15.5.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.5.1/node-v15.5.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.5.1/node-v15.5.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.5.0",
+            "date": "2020-12-22",
+            "v8": "8.6.395.17",
+            "npm": "7.3.0",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.5.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.5.0/node-v15.5.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.5.0/node-v15.5.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.5.0/node-v15.5.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.4.0",
+            "date": "2020-12-09",
+            "v8": "8.6.395.17",
+            "npm": "7.0.15",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.4.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.4.0/node-v15.4.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.4.0/node-v15.4.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.4.0/node-v15.4.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.3.0",
+            "date": "2020-11-24",
+            "v8": "8.6.395.17",
+            "npm": "7.0.14",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.3.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.3.0/node-v15.3.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.3.0/node-v15.3.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.3.0/node-v15.3.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.2.1",
+            "date": "2020-11-16",
+            "v8": "8.6.395.17",
+            "npm": "7.0.8",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.2.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.2.1/node-v15.2.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.2.1/node-v15.2.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.2.1/node-v15.2.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.2.0",
+            "date": "2020-11-10",
+            "v8": "8.6.395.17",
+            "npm": "7.0.8",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.2.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.2.0/node-v15.2.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.2.0/node-v15.2.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.2.0/node-v15.2.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.1.0",
+            "date": "2020-11-04",
+            "v8": "8.6.395.17",
+            "npm": "7.0.8",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.1.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.1.0/node-v15.1.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.1.0/node-v15.1.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.1.0/node-v15.1.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.0.1",
+            "date": "2020-10-21",
+            "v8": "8.6.395.17",
+            "npm": "7.0.3",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.0.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.0.1/node-v15.0.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.0.1/node-v15.0.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.0.1/node-v15.0.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "15.0.0",
+            "date": "2020-10-20",
+            "v8": "8.6.395.16",
+            "npm": "7.0.2",
+            "node-module-version": "88",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v15.0.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v15.0.0/node-v15.0.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v15.0.0/node-v15.0.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v15.0.0/node-v15.0.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.15.4",
+            "lts": "Fermium",
+            "date": "2021-01-04",
+            "v8": "8.4.371.19",
+            "npm": "6.14.10",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.15.4/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.15.4/node-v14.15.4-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.15.4/node-v14.15.4-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.15.4/node-v14.15.4-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.15.3",
+            "lts": "Fermium",
+            "date": "2020-12-17",
+            "v8": "8.4.371.19",
+            "npm": "6.14.9",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.15.3/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.15.3/node-v14.15.3-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.15.3/node-v14.15.3-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.15.3/node-v14.15.3-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.15.2",
+            "lts": "Fermium",
+            "date": "2020-12-15",
+            "v8": "8.4.371.19",
+            "npm": "6.14.9",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.15.2/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.15.2/node-v14.15.2-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.15.2/node-v14.15.2-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.15.2/node-v14.15.2-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.15.1",
+            "lts": "Fermium",
+            "date": "2020-11-16",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.15.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.15.1/node-v14.15.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.15.1/node-v14.15.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.15.1/node-v14.15.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.15.0",
+            "lts": "Fermium",
+            "date": "2020-10-27",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.15.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.15.0/node-v14.15.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.15.0/node-v14.15.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.15.0/node-v14.15.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.14.0",
+            "date": "2020-10-15",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.14.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.14.0/node-v14.14.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.14.0/node-v14.14.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.14.0/node-v14.14.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.13.1",
+            "date": "2020-10-07",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.13.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.13.1/node-v14.13.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.13.1/node-v14.13.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.13.1/node-v14.13.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.13.0",
+            "date": "2020-09-29",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.13.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.13.0/node-v14.13.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.13.0/node-v14.13.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.13.0/node-v14.13.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.12.0",
+            "date": "2020-09-22",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.12.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.12.0/node-v14.12.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.12.0/node-v14.12.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.12.0/node-v14.12.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.11.0",
+            "date": "2020-09-15",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.11.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.11.0/node-v14.11.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.11.0/node-v14.11.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.11.0/node-v14.11.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.10.1",
+            "date": "2020-09-10",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.10.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.10.1/node-v14.10.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.10.1/node-v14.10.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.10.1/node-v14.10.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.10.0",
+            "date": "2020-09-08",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.10.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.10.0/node-v14.10.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.10.0/node-v14.10.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.10.0/node-v14.10.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "14.9.0",
+            "date": "2020-08-27",
+            "v8": "8.4.371.19",
+            "npm": "6.14.8",
+            "node-module-version": "83",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v14.9.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v14.9.0/node-v14.9.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v14.9.0/node-v14.9.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v14.9.0/node-v14.9.0-linux-x64.tar.xz"
+            }
+        },
+        {
             "version": "14.8.0",
             "date": "2020-08-11",
             "v8": "8.4.371.19",
@@ -86,7 +381,7 @@
         },
         {
             "version": "14.6.0",
-            "date": "2020-07-15",
+            "date": "2020-07-20",
             "v8": "8.4.371.19",
             "npm": "6.14.6",
             "node-module-version": "83",
@@ -177,7 +472,7 @@
         },
         {
             "version": "13.14.0",
-            "date": "2020-04-28",
+            "date": "2020-04-29",
             "v8": "7.9.317.25",
             "npm": "6.14.4",
             "node-module-version": "79",
@@ -242,7 +537,7 @@
         },
         {
             "version": "13.10.0",
-            "date": "2020-03-03",
+            "date": "2020-03-04",
             "v8": "7.9.317.25",
             "npm": "6.13.7",
             "node-module-version": "79",
@@ -385,7 +680,7 @@
         },
         {
             "version": "13.0.0",
-            "date": "2019-10-10",
+            "date": "2019-10-22",
             "v8": "7.8.279.17",
             "npm": "6.12.0",
             "node-module-version": "79",
@@ -394,6 +689,76 @@
                 "darwin": "https://nodejs.org/download/release/v13.0.0/node-v13.0.0-darwin-x64.tar.xz",
                 "win": "https://nodejs.org/download/release/v13.0.0/node-v13.0.0-win-x64.7z",
                 "linux": "https://nodejs.org/download/release/v13.0.0/node-v13.0.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "12.20.1",
+            "lts": "Erbium",
+            "date": "2021-01-04",
+            "v8": "7.8.279.23",
+            "npm": "6.14.10",
+            "node-module-version": "72",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v12.20.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v12.20.1/node-v12.20.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v12.20.1/node-v12.20.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v12.20.1/node-v12.20.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "12.20.0",
+            "lts": "Erbium",
+            "date": "2020-11-24",
+            "v8": "7.8.279.23",
+            "npm": "6.14.8",
+            "node-module-version": "72",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v12.20.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v12.20.0/node-v12.20.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v12.20.0/node-v12.20.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v12.20.0/node-v12.20.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "12.19.1",
+            "lts": "Erbium",
+            "date": "2020-11-16",
+            "v8": "7.8.279.23",
+            "npm": "6.14.8",
+            "node-module-version": "72",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v12.19.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v12.19.1/node-v12.19.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v12.19.1/node-v12.19.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v12.19.1/node-v12.19.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "12.19.0",
+            "lts": "Erbium",
+            "date": "2020-10-06",
+            "v8": "7.8.279.23",
+            "npm": "6.14.8",
+            "node-module-version": "72",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v12.19.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v12.19.0/node-v12.19.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v12.19.0/node-v12.19.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v12.19.0/node-v12.19.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "12.18.4",
+            "lts": "Erbium",
+            "date": "2020-09-15",
+            "v8": "7.8.279.23",
+            "npm": "6.14.6",
+            "node-module-version": "72",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v12.18.4/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v12.18.4/node-v12.18.4-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v12.18.4/node-v12.18.4-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v12.18.4/node-v12.18.4-linux-x64.tar.xz"
             }
         },
         {
@@ -427,7 +792,7 @@
         {
             "version": "12.18.1",
             "lts": "Erbium",
-            "date": "2020-06-16",
+            "date": "2020-06-17",
             "v8": "7.8.279.23",
             "npm": "6.14.5",
             "node-module-version": "72",
@@ -497,7 +862,7 @@
         {
             "version": "12.16.1",
             "lts": "Erbium",
-            "date": "2020-02-14",
+            "date": "2020-02-18",
             "v8": "7.8.279.23",
             "npm": "6.13.4",
             "node-module-version": "72",
@@ -553,7 +918,7 @@
         {
             "version": "12.14.0",
             "lts": "Erbium",
-            "date": "2019-12-16",
+            "date": "2019-12-17",
             "v8": "7.7.299.13",
             "npm": "6.13.4",
             "node-module-version": "72",
@@ -1035,6 +1400,48 @@
             }
         },
         {
+            "version": "10.23.1",
+            "lts": "Dubnium",
+            "date": "2021-01-04",
+            "v8": "6.8.275.32",
+            "npm": "6.14.10",
+            "node-module-version": "64",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v10.23.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v10.23.1/node-v10.23.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v10.23.1/node-v10.23.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v10.23.1/node-v10.23.1-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "10.23.0",
+            "lts": "Dubnium",
+            "date": "2020-10-27",
+            "v8": "6.8.275.32",
+            "npm": "6.14.8",
+            "node-module-version": "64",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v10.23.0/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v10.23.0/node-v10.23.0-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v10.23.0/node-v10.23.0-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v10.23.0/node-v10.23.0-linux-x64.tar.xz"
+            }
+        },
+        {
+            "version": "10.22.1",
+            "lts": "Dubnium",
+            "date": "2020-09-15",
+            "v8": "6.8.275.32",
+            "npm": "6.14.6",
+            "node-module-version": "64",
+            "url": {
+                "shasum256": "https://nodejs.org/download/release/v10.22.1/SHASUMS256.txt",
+                "darwin": "https://nodejs.org/download/release/v10.22.1/node-v10.22.1-darwin-x64.tar.xz",
+                "win": "https://nodejs.org/download/release/v10.22.1/node-v10.22.1-win-x64.7z",
+                "linux": "https://nodejs.org/download/release/v10.22.1/node-v10.22.1-linux-x64.tar.xz"
+            }
+        },
+        {
             "version": "10.22.0",
             "lts": "Dubnium",
             "date": "2020-07-21",
@@ -1065,7 +1472,7 @@
         {
             "version": "10.20.1",
             "lts": "Dubnium",
-            "date": "2020-04-10",
+            "date": "2020-04-12",
             "v8": "6.8.275.32",
             "npm": "6.14.4",
             "node-module-version": "64",
@@ -1079,7 +1486,7 @@
         {
             "version": "10.20.0",
             "lts": "Dubnium",
-            "date": "2020-03-24",
+            "date": "2020-03-26",
             "v8": "6.8.275.32",
             "npm": "6.14.4",
             "node-module-version": "64",
@@ -1107,7 +1514,7 @@
         {
             "version": "10.18.1",
             "lts": "Dubnium",
-            "date": "2020-01-07",
+            "date": "2020-01-09",
             "v8": "6.8.275.32",
             "npm": "6.13.4",
             "node-module-version": "64",
@@ -1121,7 +1528,7 @@
         {
             "version": "10.18.0",
             "lts": "Dubnium",
-            "date": "2019-12-16",
+            "date": "2019-12-17",
             "v8": "6.8.275.32",
             "npm": "6.13.4",
             "node-module-version": "64",
@@ -1135,7 +1542,7 @@
         {
             "version": "10.17.0",
             "lts": "Dubnium",
-            "date": "2019-10-21",
+            "date": "2019-10-22",
             "v8": "6.8.275.32",
             "npm": "6.11.3",
             "node-module-version": "64",
@@ -1760,7 +2167,7 @@
         {
             "version": "8.16.2",
             "lts": "Carbon",
-            "date": "2019-10-08",
+            "date": "2019-10-09",
             "v8": "6.2.414.78",
             "npm": "6.4.1",
             "node-module-version": "57",

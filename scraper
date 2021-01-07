@@ -1,8 +1,11 @@
-#!/usr/bin/python3
+#!/usr/bin/env python3
 
 import urllib.request
+import ssl
 from html.parser import HTMLParser
 import json
+
+ssl._create_default_https_context = ssl._create_unverified_context
 
 DOWNLOADS = 'url'
 KEYMAP = {
@@ -20,6 +23,10 @@ BRANCHES = [
     {
         "name": "All",
         "pattern": ""
+    },
+    {
+        "name": "Node.js 15.x",
+        "pattern": "15."
     },
     {
         "name": "Node.js 14.x LTS",
